@@ -27,6 +27,7 @@ RUN service apache2 restart
 RUN apt-get install -y composer
 COPY .env.example /var/www/html/hospital/.env
 COPY . .
+RUN composer install --no-interaction --optimize-autoloader
 
 RUN chown -R www-data:www-data *
 RUN chown -R www-data:www-data /var/www/html/hospital/.env

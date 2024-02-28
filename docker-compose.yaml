@@ -10,7 +10,8 @@ services:
       - db
     links:
       - db
-
+    volumes:
+          - .:/var/www/html/hospital
   db:
     image: mysql:8.0
     environment:
