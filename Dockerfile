@@ -9,7 +9,7 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata unzip
 RUN apt-get install -y php-cli php-mbstring unzip git
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN composer self-update
+
 
 # Install PHP 8.2 and required extensions
 RUN apt-get install -y software-properties-common && \
