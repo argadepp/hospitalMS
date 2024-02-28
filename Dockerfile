@@ -35,7 +35,7 @@ COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
 RUN php8.2 artisan key:generate
 # Expose port 80 (assuming your web server runs on this port)
-EXPOSE 8000
+EXPOSE 80
 
 # Run migrations and storage:link on container startup
 CMD ["sh", "-c", "php8.2 artisan migrate && php8.2 artisan storage:link && apache2ctl -D FOREGROUND"]
